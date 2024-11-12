@@ -84,7 +84,7 @@ const Dog = () => {
           <div className='descriptive-info'>
           <h3>{dog.acf.breed}</h3>
 
-          <h3>Born Approx: {dog.acf.age}</h3>
+          <h3>Born Approx: {dog.acf.dateOfBirth}</h3>
 
           <h3>{dog.acf.gender}</h3>
 
@@ -97,16 +97,35 @@ const Dog = () => {
           
         </div>
         <div className="icon">
+          <div>
             <MdFamilyRestroom
               style={{
               color: dog.acf?.friendly_with_young_families ? '#4b7b3f' : 'grey',
               }}
             />
+            <p>
+              {dog.acf?.friendly_with_young_families 
+                ? 'Dog is friendly with young families' 
+                : 'Dog is NOT friendly with young families'}
+            </p>
+
+          </div>
+
+          <div>
             <MdOutlinePets
               style={{
               color: dog.acf?.friendly_with_other_animals ? '#4b7b3f' : 'grey',
               }}
             />
+
+            <p>
+              {dog.acf?.friendly_with_other_animals  
+                ? 'Dog is friendly with other animals' 
+                : 'Dog is NOT friendly with other animals'}
+            </p>
+          </div>
+            
+            
         </div>
 
       </div>

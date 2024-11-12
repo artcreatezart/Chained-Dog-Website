@@ -24,6 +24,7 @@ h1, h2, h3, h6, li, button{
   font-family: "Rubik", serif;
 }
 
+
 h4 {
   font-family: "Delius Swash Caps", cursive;
   font-size: 2rem;
@@ -34,6 +35,7 @@ p {
   line-height: 1.8rem;
   margin-bottom: 1.4rem;
   font-size: 1.2rem;
+  color: #172b46;
 }
 
 

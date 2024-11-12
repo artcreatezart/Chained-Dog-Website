@@ -47,6 +47,9 @@ const Event = () => {
         <h4>{event.title.rendered}</h4>
         <img src={getFeaturedImage(event)} alt={event.title.rendered + 'image'} className='event-image'/>
         <div dangerouslySetInnerHTML={{__html: event.content.rendered}}/>
+        <h3>Location: {event.acf.location}</h3>
+        <h3>Date: {event.acf.date}</h3>
+        <h3>Start Time: {event.acf.time}</h3>
       </div>
     </>
   )

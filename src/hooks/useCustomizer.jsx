@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const useCustomizer = () => {
+  
   const [bgColor, setBgColor] = useState('');
   const [fontFamily, setFontFamily] = useState('');
   const [mobileMenu, setMobileMenu] = useState('');

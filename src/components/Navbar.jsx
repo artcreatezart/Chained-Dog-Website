@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 const baseURL = import.meta.env.VITE_WP_BASEURL
 
 const Navbar = () => {
-    const {cart, updateCart} = useContext(CartContext);
+    const {cart} = useContext(CartContext);
     const [isOpen, setIsOpen] = useState(false);
     const {mobileMenu} = useCustomizer();
     const [logoURL, setLogoURL] = useState('')
