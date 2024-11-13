@@ -150,7 +150,7 @@ const Navbar = () => {
                 <Link 
                     to='/contact'
                     onClick={closeMenu}
-                    className='secondary-button'
+                    className='secondary-button navbar-secondary-button'
                     >
                         Report a Chained Dog
                 </Link>

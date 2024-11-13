@@ -18,6 +18,13 @@ const App = () => {
 
   useEffect(() => {
     if (!isCustomizerLoaded) return;
+
+    document.documentElement.style.setProperty('--primary-btn-bg', primaryBtnColor);
+    document.documentElement.style.setProperty('--primary-btn-text', primaryBtnTextColor);
+    document.documentElement.style.setProperty('--secondary-btn-bg', secondaryBtnColor);
+    document.documentElement.style.setProperty('--secondary-btn-text', secondaryBtnTextColor);
+    document.documentElement.style.setProperty('--event-home-bg', navColor);
+
   
     // Set background color and font for body
     document.body.style.backgroundColor = `#${bgColor}`;
@@ -29,19 +36,6 @@ const App = () => {
     if (nav) nav.style.backgroundColor = navColor;
     if (footer) footer.style.backgroundColor = navColor;
   
-    // Style primary buttons
-    const primaryButton = document.querySelectorAll('.primary-button');
-    primaryButton.forEach(button => {
-      button.style.backgroundColor = primaryBtnColor;
-      button.style.color = primaryBtnTextColor;
-    });
-  
-    // Style secondary buttons
-    const secondaryButton = document.querySelectorAll('.secondary-button');
-    secondaryButton.forEach(button => {
-      button.style.backgroundColor = secondaryBtnColor;
-      button.style.color = secondaryBtnTextColor;
-    });
   }, [bgColor, fontFamily, navColor, primaryBtnColor, primaryBtnTextColor, secondaryBtnColor, secondaryBtnTextColor]);
 
 
@@ -50,8 +44,7 @@ const App = () => {
         {isCustomizerLoaded ? (
           <div style={{ backgroundColor: `#${bgColor}`, fontFamily: fontFamily}}>
             <Navbar style={{ backgroundColor: navColor }} />
-            <Links primaryButtonsStyle={{ backgroundColor: primaryBtnColor, color: primaryBtnTextColor }}
-            secondaryButtonsStyle={{ backgroundColor: secondaryBtnColor, color: secondaryBtnTextColor }}/>
+            <Links />
             <Footer />
           </div>
         ) : (

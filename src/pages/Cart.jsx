@@ -18,6 +18,10 @@ const Cart = () => {
     }
   };
 
+  const totalPrice = cart.reduce((total, item) => {
+    return total + item.prices.price *item.quantity;
+  }, 0) / 100;
+
   return (
     <>
         <Seo 
@@ -43,6 +47,7 @@ const Cart = () => {
                         <h2>{item.name}</h2>
                         <p>Price: ${parseFloat(item.prices.price / 100).toFixed(2)}</p>
                         <p>Quantity: {item.quantity}</p>
+                        <p>Total Item Price: ${parseFloat(item.prices.price * item.quantity / 100).toFixed(2)}</p>
                         <div><button onClick={() => handleDecrement(item)}>-</button>
                         <button onClick={() => handleIncrement(item)}>+</button></div>
                         
@@ -51,9 +56,12 @@ const Cart = () => {
                 ))}
                 
             </ul>
+            <div className='total-price'>
+                <h2>Total: ${totalPrice.toFixed(2)}</h2>
+            </div>
             <div className="button-container">
-                <button className='primary-button'>Proceed to Checkout</button>
                 <Link to='/shopCategories' className="secondary-button">Continue Shopping</Link>
+                <button className='primary-button'>Proceed to Checkout</button>
             </div>
             
             </>
