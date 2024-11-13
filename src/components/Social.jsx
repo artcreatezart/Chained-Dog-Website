@@ -27,7 +27,7 @@ const Social = ({ socials = [] }) => {
                 >
                     <img
                     src={getFeaturedImage(social)}
-                    alt={social.title?.rendered || "Sponsor"}
+                    alt={social.title?.rendered || "Social"}
                 />
                 </a>
                 
