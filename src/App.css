@@ -168,7 +168,15 @@ nav li .secondary-button{
   background-color: var(--secondary-btn-bg, #344966); 
   color: var(--secondary-btn-text, #ffffff); 
   transition: 0.5s ease;
+  letter-spacing: 1.2px;
+  line-height: 1.2rem;
 }
+
+.taxonomy-term-pill {
+  color: white;
+  font-family: "Rubik", serif;
+}
+
 
 .navbar-secondary-button {
   outline: 3px solid white;
@@ -675,10 +683,22 @@ footer p{
 }
 
 /* Media Queries - Mobile */
-
 @media (max-width: 900px) {
-  h1 {
-    font-size: 1.5rem;
+  .header-section h1 {
+    font-size: 3rem;
+
+  }
+
+  .post-container img {
+    max-width: 400%;
+  }
+
+  .key-info-post img{
+    width: 100%;
+  }
+
+  .blog-container h2{
+    text-align: center;
   }
   .menu-icon {
     display: flex;
@@ -732,5 +752,33 @@ footer p{
 
   .dog-post-container {
     flex-direction: column;
+  }
+
+  .descriptive-info {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: auto auto; 
+  }
+  
+  .descriptive-info h3:nth-child(1) {
+    grid-column: 1 / -1; 
+  }
+  
+  .descriptive-info h3:nth-child(2) {
+    grid-column: 1 / -1; 
+  }
+  
+  .descriptive-info h3:nth-child(3) {
+    grid-column: 1;
+  }
+  
+  .descriptive-info h3:nth-child(4) {
+    grid-column: 2;
+  }
+
+  .secondary-button {
+    width: 100%;
+    margin-top: 20px;
   }
 }

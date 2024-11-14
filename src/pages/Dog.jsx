@@ -82,15 +82,15 @@ const Dog = () => {
         <div>
           <h4>{dog.title.rendered}</h4>
           <div className='descriptive-info'>
-          <h3>{dog.acf.breed}</h3>
+            <h3>Breed: {dog.acf.breed}</h3>
 
-          <h3>Born Approx: {dog.acf.dateOfBirth}</h3>
+            <h3>Born Approx: {dog.acf.dateOfBirth}</h3>
 
-          <h3>{dog.acf.gender}</h3>
+            <h3>{dog.acf.gender}</h3>
 
-          <h3>{dog.acf.size}</h3>
+            <h3>{dog.acf.size}</h3>
 
-        </div>
+          </div>
           <div className='secondary-button'>
             <DogUpdates dog={dog} className='secondary-button'/>
           </div>

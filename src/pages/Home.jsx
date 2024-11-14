@@ -46,7 +46,7 @@ const Home = () => {
         url={window.location.href}
       />
     <div id='homeContainer'>
-      <HomeHeader title='Chained Dog Rehibilibatiation and Rehoming' image_url='/header-bg-imgs/bgimg2.jpg'/>
+      <HomeHeader title='Chained Dog Rehabilitation and Rehoming' image_url='/header-bg-imgs/bgimg2.jpg'/>
       <div className='home-post-container'>
         <div className='blog-container'>
           <h2>Blog</h2>
