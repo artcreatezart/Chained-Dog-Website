@@ -44,12 +44,24 @@ const Event = () => {
       />
       <PageHeader title={event.title.rendered} image_url={getFeaturedImage(event)}/>
       <div key={event.slug} className='event-post-container'>
-        <h4>{event.title.rendered}</h4>
-        <img src={getFeaturedImage(event)} alt={event.title.rendered + 'image'} className='event-image'/>
-        <div dangerouslySetInnerHTML={{__html: event.content.rendered}}/>
-        <h3>Location: {event.acf.location}</h3>
-        <h3>Date: {event.acf.date}</h3>
-        <h3>Start Time: {event.acf.time}</h3>
+        <div className='left-event-blog-container'>
+          <h4>{event.title.rendered}</h4>
+          <img src={getFeaturedImage(event)} alt={event.title.rendered + 'image'} className='event-image'/>
+
+        </div>
+        <div className='right-event-blog-container'>
+          <div className='border-post'>
+            <div dangerouslySetInnerHTML={{__html: event.content.rendered}}/>
+            <div className='h3-container'>
+              <h3>DATE: {event.acf.date}</h3>
+              <h3>START TIME: {event.acf.time}</h3>
+              <h3>LOCATION: {event.acf.location}</h3>
+            </div>
+          </div>
+          
+        
+        </div>
+        
       </div>
     </>
   )

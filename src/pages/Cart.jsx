@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 import { Link } from "react-router-dom";
 import Seo from "../components/Seo";
+import { FaTrashAlt } from "react-icons/fa";
 
 const Cart = () => {
   const {cart, updateCart, removeFromCart} = useContext(CartContext);
@@ -45,13 +46,18 @@ const Cart = () => {
                     <li key={item.id} className="cart-product">
                         <img src={item.images[0].src} alt={item.name} />
                         <h2>{item.name}</h2>
-                        <p>Price: ${parseFloat(item.prices.price / 100).toFixed(2)}</p>
-                        <p>Quantity: {item.quantity}</p>
-                        <p>Total Item Price: ${parseFloat(item.prices.price * item.quantity / 100).toFixed(2)}</p>
-                        <div><button onClick={() => handleDecrement(item)}>-</button>
-                        <button onClick={() => handleIncrement(item)}>+</button></div>
+                        <p>QUANTITY: {item.quantity}</p>
+                        <p>TOTAL ITEM PRICE: ${parseFloat(item.prices.price * item.quantity / 100).toFixed(2)}</p>
+                        <div className='cart-buttons'>
+                            <button onClick={() => removeFromCart(item.id)} className='delete-product'><FaTrashAlt /></button>
+                            <div className="plus-minus-buttons">
+                            <button onClick={() => handleDecrement(item)} className='remove-product secondary-button'>-</button>
+                            <button onClick={() => handleIncrement(item)}className='add-product secondary-button'>+</button>
+                            </div>
+                            
+                        </div>
                         
-                        <button onClick={() => removeFromCart(item.id)}>Remove</button>
+                        
                     </li>
                 ))}
                 

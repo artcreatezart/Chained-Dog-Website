@@ -48,9 +48,17 @@ const Blog = () => {
 
       <PageHeader title={blog.title.rendered} image_url={getFeaturedImage(blog)}/>
       <div key={blog.slug} className='blog-post-container'>
-        <h4>{blog.title.rendered}</h4>
-        <img src={getFeaturedImage(blog)} alt={blog.title.rendered + 'image'} className='blog-image'/>
-        <div dangerouslySetInnerHTML={{__html: blog.content.rendered}}/>
+        <div className='left-event-blog-container'>
+          <h4>{blog.title.rendered}</h4>
+          <img src={getFeaturedImage(blog)} alt={blog.title.rendered + 'image'} className='blog-image'/>
+        </div>
+        <div className='right-event-blog-container'>
+          <div className='border-post'>
+            <div dangerouslySetInnerHTML={{__html: blog.content.rendered}}/>
+          </div>
+
+        </div>
+        
       </div>
     </>
   )

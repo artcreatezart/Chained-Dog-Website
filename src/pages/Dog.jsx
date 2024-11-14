@@ -78,13 +78,14 @@ const Dog = () => {
         url={window.location.href}
       />
       <PageHeader title={dog.title.rendered} image_url={getFeaturedImage(dog)}/>
+      <div className='total-dog-container'>
       <div key={dog.slug} className='dog-post-container'>
-        <div>
+        <div className='top-container-dog'>
           <h4>{dog.title.rendered}</h4>
           <div className='descriptive-info'>
             <h3>Breed: {dog.acf.breed}</h3>
 
-            <h3>Born Approx: {dog.acf.dateOfBirth}</h3>
+            <h3>Born: {dog.acf.dateOfBirth}</h3>
 
             <h3>{dog.acf.gender}</h3>
 
@@ -97,7 +98,7 @@ const Dog = () => {
           
         </div>
         <div className="icon">
-          <div>
+          <div className='icon-descript'>
             <MdFamilyRestroom
               style={{
               color: dog.acf?.friendly_with_young_families ? '#4b7b3f' : 'grey',
@@ -111,7 +112,7 @@ const Dog = () => {
 
           </div>
 
-          <div>
+          <div className='icon-descript'>
             <MdOutlinePets
               style={{
               color: dog.acf?.friendly_with_other_animals ? '#4b7b3f' : 'grey',
@@ -127,16 +128,18 @@ const Dog = () => {
             
             
         </div>
-
-      </div>
-      <div className='dog-post-container-info'>
-        
-        <div dangerouslySetInnerHTML={{__html: dog.content.rendered}}/>
         <div className='button-container'>       
           <button className='secondary-button'>Frequently Asked Questions</button>
           <button className='primary-button'>Apply To Adopt Now</button>
         </div>
 
+      </div>
+      <div className='dog-post-container-info'>
+        
+        <div dangerouslySetInnerHTML={{__html: dog.content.rendered}} className='img-descript'/>
+        
+
+      </div>
       </div>
      
       
